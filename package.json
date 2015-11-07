@@ -1,0 +1,24 @@
+{
+    "name": "waker-sample",
+    "version": "0.0.0",
+    "description": "Walker alias method for sampling a discrete probability distribution in O(1) time.",
+    "author": "Matt Bierner",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mattbierner/walker-sample.git"
+    },
+    "keywords": [
+        "walker",
+        "sample",
+        "distribution",
+        "alias method"],
+
+    "main": "index.js",
+
+    "dependencies": { },
+    "devDependencies": {
+        "chai": "*",
+        "mocha": "*"
+    }
+}
