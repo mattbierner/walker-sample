@@ -15,7 +15,7 @@ The top level export of `walker-sample` is a function that constructs a table to
 const walker = require('walker-sample');
         
 // Create table with weights
-const table = walker([
+const sampler = walker([
     [1, 'a'],   
     [3, 'b'],
     [2, 'c'],
@@ -27,7 +27,7 @@ The function takes a list of weight, value pairs. The weights must be greater th
 The table above will produces `'a'` 10% of the time, `'b'` 30%, `'c'` 20%, and `'d'` 40% of the time. Weights are relative, so we get the same behavior with:
 
 ```js
-const table = walker([
+const sampler = walker([
     [0.1, 'a'],   
     [0.3, 'b'],
     [0.2, 'c'],
@@ -37,7 +37,7 @@ const table = walker([
 or with:
 
 ```js
-const table = walker([
+const sampler = walker([
     [300, 'a'], 
     [900, 'b'],
     [600, 'c'],
@@ -48,25 +48,25 @@ const table = walker([
 `table` is just a function that can be sampled in O(1) time:
 
 ```
-table() === 'd';
+sampler() === 'd';
 ```
 
 The default behavior uses `Math.random` for sampling. The sample function can also take a custom random number generator if predictable samples are needed. This is useful for testing.
     
 ```js
 const r = () => 0.5;
-table(r) === 'a';
-table(r) === 'a';
+sampler(r) === 'a';
+sampler(r) === 'a';
 ...
 // still 'a'
-table(r) === 'a';
+sampler(r) === 'a';
 ```
 
 If you want to use the same random number generator for all samples, use `.bind`
 
 ```js
-const biasedTable = table.bind(() => 0.5);
-biasedTable() === 'a';
+const biasedSampler = sampler.bind(() => 0.5);
+biasedSampler() === 'a';
 ```
 
 The random number generator must be a function that takes no arguments and produces a number between [0, 1]. This random number generator will be invoked twice for each sample.
