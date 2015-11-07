@@ -45,7 +45,7 @@ const sampler = walker([
 ```
 
 ### Sampling
-`table` is just a function that can be sampled in O(1) time:
+`sampler` is just a function that can be sampled in O(1) time:
 
 ```
 sampler() === 'd';
