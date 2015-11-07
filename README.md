@@ -65,7 +65,7 @@ sampler(r) === 'a';
 If you want to use the same random number generator for all samples, use `.bind`
 
 ```js
-const biasedSampler = sampler.bind(() => 0.5);
+const biasedSampler = sampler.bind(null, () => 0.5);
 biasedSampler() === 'a';
 ```
 
