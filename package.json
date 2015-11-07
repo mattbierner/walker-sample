@@ -1,5 +1,5 @@
 {
-    "name": "waker-sample",
+    "name": "walker-sample",
     "version": "0.0.0",
     "description": "Walker alias method for sampling a discrete probability distribution in O(1) time.",
     "author": "Matt Bierner",
